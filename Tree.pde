@@ -35,6 +35,6 @@ void drawPoints(ArrayList<Point> pointList) {
 }
 
 void draw() {
-  testProgram();
+
 }
 
