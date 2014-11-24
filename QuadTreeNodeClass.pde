@@ -40,15 +40,19 @@ class QuadTreeNode {
   }
 
   void findCentroid() {
-    float massTotal = 0, pointAvgX = 0, pointAvgY = 0;
-    for (Point temp : pointList) {
-      massTotal = massTotal + temp.getMass();
-    }
-    for (Point temp : pointList) {
-      pointAvgX = pointAvgX + temp.getX()*temp.getMass()/massTotal;
-      pointAvgY = pointAvgY + temp.getY()*temp.getMass()/massTotal;
-    }
-    centroid = new Point(pointAvgX, pointAvgY, massTotal);
+    if (pointList.size() > 1) {
+      float massTotal = 0, pointAvgX = 0, pointAvgY = 0;
+      for (Point temp : pointList) {
+        massTotal = massTotal + temp.getMass();
+      }
+      for (Point temp : pointList) {
+        pointAvgX = pointAvgX + temp.getX()*temp.getMass()/massTotal;
+        pointAvgY = pointAvgY + temp.getY()*temp.getMass()/massTotal;
+      }
+      centroid = new Point(pointAvgX, pointAvgY, massTotal);
+    } else if( pointList.size() == 1) {
+      centroid = pointList.get(0);
+    } 
   }
 }
 
