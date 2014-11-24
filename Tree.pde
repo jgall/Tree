@@ -2,7 +2,7 @@
 float windowX = 800, windowY = 800, maxMass = 100;
 void setup() {
   size(int(windowX), int(windowY));
-  //testProgram();
+  testProgram();
 }
 
 void testProgram() {
