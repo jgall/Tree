@@ -1,5 +1,5 @@
 //tree test stuff
-float windowX = 800, windowY = 800;
+float windowX = 800, windowY = 800, maxMass = 100;
 void setup() {
   size(int(windowX), int(windowY));
   testProgram();
@@ -14,7 +14,7 @@ void testProgram() {
 ArrayList<Point> makePoints(int num) {
   ArrayList<Point> tempList = new ArrayList(num);
   for (int i = 0; i < num; i++) {
-    Point temp = new Point(random(windowX), random(windowY));
+    Point temp = new Point(random(windowX), random(windowY), random(maxMass));
     tempList.add(temp);
   }
   return tempList;
