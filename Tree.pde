@@ -2,7 +2,7 @@
 float windowX = 800, windowY = 800, maxMass = 100;
 void setup() {
   size(int(windowX), int(windowY));
-  testProgram();
+  //testProgram();
 }
 
 void testProgram() {
@@ -27,10 +27,14 @@ void drawPoints(ArrayList<Point> pointList) {
   noStroke();
   fill(0);
   for (Point temp : pointList) {
-    ellipse(temp.getX(), temp.getY(), 3, 3);
+    ellipse(temp.getX(), temp.getY(), 2, 2);
     stroke(0);
-    line(windowX, 0, windowY, windowY); 
+    line(windowX, 0, windowY, windowY);
     line(0, windowX, windowY, windowY);
   }
+}
+
+void draw() {
+  testProgram();
 }
 

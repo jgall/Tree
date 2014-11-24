@@ -10,6 +10,7 @@ class QuadTreeNode {
     x2 = _x2;
     y1 = _y1;
     y2 = _y2;
+
     makeChildren();
     findCentroid();
   }
@@ -48,7 +49,6 @@ class QuadTreeNode {
       pointAvgY = pointAvgY + temp.getY()*temp.getMass()/massTotal;
     }
     centroid = new Point(pointAvgX, pointAvgY, massTotal);
-    println(centroid.getMass());
   }
 }
 
