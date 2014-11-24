@@ -1,0 +1,36 @@
+//tree test stuff
+float windowX = 800, windowY = 800;
+void setup() {
+  size(int(windowX), int(windowY));
+  testProgram();
+}
+
+void testProgram() {
+  ArrayList<Point> testList = makePoints(1000);
+  drawPoints(testList);
+  QuadTreeNode quadTreeTest = new QuadTreeNode(testList, 0.0, windowX, 0.0, windowY);
+}
+
+ArrayList<Point> makePoints(int num) {
+  ArrayList<Point> tempList = new ArrayList(num);
+  for (int i = 0; i < num; i++) {
+    Point temp = new Point(random(windowX), random(windowY));
+    tempList.add(temp);
+  }
+  return tempList;
+}
+
+void drawPoints(ArrayList<Point> pointList) {
+  smooth(8);
+  fill(240);
+  rect(0, 0, windowX, windowY);
+  noStroke();
+  fill(0);
+  for (Point temp : pointList) {
+    ellipse(temp.getX(), temp.getY(), 3, 3);
+    stroke(0);
+    line(windowX, 0, windowY, windowY); 
+    line(0, windowX, windowY, windowY);
+  }
+}
+
