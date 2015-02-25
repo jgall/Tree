@@ -50,9 +50,23 @@ class QuadTreeNode {
         pointAvgY = pointAvgY + temp.getY()*temp.getMass()/massTotal;
       }
       centroid = new Point(pointAvgX, pointAvgY, massTotal);
-    } else if( pointList.size() == 1) {
+    } else if ( pointList.size() == 1) {
       centroid = pointList.get(0);
-    } 
+    }
+  }
+  
+  QuadTreeNode getChild(int section){
+    if(section == 1) {
+      return c1;
+    } else if(section == 2) {
+      return c2;
+    } else if(section == 3) {
+      return c3;
+    } else if(section == 4) {
+      return c4;
+    } else {
+      return this;
+    }
   }
 }
 
